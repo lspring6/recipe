@@ -1,0 +1,350 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+*/
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap');
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+html {
+    background-color: rgba(122, 191, 191, .5);
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+    font-size: small;
+    background-color: white;
+    max-width: 1280px;
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 90px;
+}
+h1, h2, h3, h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: normal;
+}
+
+header {
+    display: flex;
+    align-items: flex-start;
+}
+header h1 {
+    font-size: x-large;
+    text-align: center;
+}
+header > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+header a {
+    color: #eb5428;
+    font-weight: bold;
+    text-decoration: none;
+}
+header figure {
+    margin: 0;
+    padding: 0;
+}
+header figure img {
+    width: auto;
+    height: auto;
+    max-height: 400px;
+}
+@media print {
+    body {
+      margin: 0.5in;
+    }
+    body, h1, h2, h3, h4, h5, h6, p, li, a {
+      font-family: 'Times New Roman', serif;
+    }
+    img {
+      display: none;
+    }
+    nav {
+      display: none;
+    }
+    a[href]:after {
+      content: " (" attr(href) ")";
+    }
+    html, body {
+      max-height: 100%;
+      page-break-after: avoid;
+      page-break-before: avoid;
+      page-break-inside: avoid;
+    }
+    * {
+      page-break-inside: avoid;
+    }
+}
+#details {
+    background-color: black;
+    color: #7abfbf;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+    gap: 10px;
+}
+#details h2 {
+    text-align: center;
+    font-size: larger;
+}
+#details p {
+    margin: 0;
+    padding: 5px;
+    box-sizing: border-box;
+}
+#ingredients h2 {
+    font-size: larger;
+}
+#ingredients ul {
+    list-style-type: disc;
+}
+#ingredients li {
+    font-size: smaller;
+}
+#directions h2 {
+    font-size: larger;
+    text-align: center;
+}
+#directions ol {
+    font-size: smaller;
+    list-style-type: decimals;
+}
+#directions li {
+    margin-bottom: 10px;
+}
+.recipe-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+aside {
+    background-color: #7abfbf;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+}
+aside h2 {
+    font-size: larger;
+    text-align: center;
+}
+.side-dish {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+.side-dish img {
+    width: 120px;
+    height: auto;
+    margin-right: 20px;
+}
+.side-dish div {
+    flex: 1;
+}
+@media (max-width: 1280px) {
+    .side-dish {
+        flex-basis: 100%;
+    }
+}
+nav {
+    grid-area: nav;
+    min-width: 414px;
+    background-color: #ffffff;
+    box-shadow: 0px 3px 3px #bbb;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0 10px;
+    height: 80px;
+}
+nav ul {
+    grid-area: menu;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    max-height: 0;
+    transition: max-height 0.3s ease;
+    display: flex;
+    padding-left: 0;
+    justify-content: center;
+}
+nav li img {
+    display: none;
+}
+nav li a {
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+}
+nav label {
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+}
+label span {
+    background-color: #eb5428;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background-color .2s ease-out;
+    width: 25px;
+}
+label span:before, label span:after {
+    background: #eb5428;
+    content: '';
+    display: block;
+    height: 2px;
+    position: absolute;
+    width: 25px;
+    transition: transform 0.3s ease;
+}
+nav input:checked + label span {
+    background: transparent;
+}
+nav input:checked ~ ul {
+    max-height: 414px;
+}
+@media (min-width: 768px) {
+    nav ul {
+        display: flex;
+        max-height: none;
+    }
+    nav li img {
+        display: inline-block;
+    }
+    nav label, nav input {
+        display: none;
+    }
+}
+nav a {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    color: #eb5428;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+nav h2 {
+    visibility:hidden;
+}
+nav img {
+    max-width: 30px;
+    max-height: 30px;
+}
+nav li {
+    margin-right: 20px;
+}
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: #EB5428;
+    padding: 2px;
+    width: fit-content;
+}
+.search-container input[type="search"] {
+    border: none;
+    outline: none;
+    margin-right: 10px;
+    padding: 10px 10px;
+    width: 100%;
+}
+.search-container button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+.icon-tabler-search {
+    stroke: #ffffff;
+    width: 24px;
+    height: 24px;
+}
+.search-container input[type="search"]:focus {
+    border-color: #ffffff;
+}
+.search-container button:focus {
+    outline: none;
+}
+footer section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+footer h2 {
+    visibility: hidden;
+}
+footer a {
+    color: #EB5428;
+    font-weight: bold;
+    text-decoration: none;
+}
+footer img {
+    width: 100px;
+}
+footer section {
+    flex-direction: row-reverse;
+}
+footer p {
+    font-weight: bold;
+    font-size: small;
+}
